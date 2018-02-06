@@ -7,13 +7,13 @@ Musi umożliwiać:
 5.          Zarządzanie grupami // zrealizowano
 6.          Nauczyciele są powiązani z przedmiotami, które prowadzą // zrealizowano
 7.          Studenci są powiązani z grupami // zrealizowano
-8.          Grupy mają przypisane przedmioty w których uczestniczą
+8.          Grupy mają przypisane przedmioty w których uczestniczą // zrealizowano
 9.          Studentom można wystawiać oceny za poszczególne przedmioty
 10.        Każdy przedmiot posiada ilość punktów ECTS, którą student zdobywa za zaliczenie
 11.        Określenie dla studenta aktualnego statusu (czy zdobył wystarczającą liczbę punktów ECTS do przejścia na kolejny semestr)
 12.        Zapis i wczytanie stanu aplikacji (plik/baza danych)
 13.        Wykorzystać dziedziczenie // zrealizowano - z klasy Osoba dziedziczą: Student i Nauczyciel
 14.        Wykorzystać kompozycję
-15.        Wykorzystać funkcje wirtualne (C++) / interfejsy (java)
+15.        Wykorzystać funkcje wirtualne (C++) / interfejsy (java) // zrealizowano - metody: dodajPrzedmiot() i usunPrzedmiot() są wykorzystywane klasac: Nauczyciel i Grupa
 16.        Wykorzystać szablon klas (C++) / klasy abstrakcyjne (java)
 17.        Wykorzystać szablon funkcji / metody abstrakcyjne (java)

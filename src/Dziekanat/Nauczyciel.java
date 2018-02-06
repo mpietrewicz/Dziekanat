@@ -2,7 +2,7 @@ package Dziekanat;
 
 import java.util.ArrayList;
 
-public class Nauczyciel extends Osoba{
+public class Nauczyciel extends Osoba implements MenadzerListyPrzedmiotow{
     ArrayList<Przedmiot> przedmioty = new ArrayList<Przedmiot>();
 
     public Nauczyciel(String imie, String nazwisko) {

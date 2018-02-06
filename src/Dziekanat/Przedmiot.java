@@ -1,5 +1,7 @@
 package Dziekanat;
 
+import java.util.ArrayList;
+
 public class Przedmiot {
     String nazwa;
 

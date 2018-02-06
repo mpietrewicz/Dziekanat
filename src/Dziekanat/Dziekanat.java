@@ -57,5 +57,17 @@ public class Dziekanat {
         System.out.println(janek);
         janek.usunZGrupy(grupa3b);
         System.out.println(janek);
+
+        // 8. Grupy mają przypisane przedmioty w których uczestniczą
+        Grupa grupa4c = new Grupa("4C");
+        Przedmiot jPolski = new Przedmiot("język polski");
+        Przedmiot jAngielski = new Przedmiot("język angielski");
+        grupa4c.dodajPrzedmiot(jPolski);
+        grupa4c.dodajPrzedmiot(jAngielski);
+        grupa4c.usunPrzedmiot(jAngielski);
+        Grupa grupa4d = new Grupa("4D");
+        grupa4d.dodajPrzedmiot(jAngielski);
+        System.out.println(grupa4c);
+        System.out.println(grupa4d);
     }
 }
