@@ -14,6 +14,7 @@ public class Dziekanat {
         for (Student student : Lista.INSTANCJA.listaStudentow) {
             System.out.println(student);
         }
+
         // 2. Zarządzanie nauczycielami
         Nauczyciel nauczycielAdam = new Nauczyciel("Adam", "Nowak");
         Lista.INSTANCJA.listaNauczycieli.add(nauczycielAdam);
@@ -23,5 +24,12 @@ public class Dziekanat {
         }
         Lista.INSTANCJA.listaNauczycieli.remove(0);
         System.out.println(Lista.INSTANCJA.listaNauczycieli.size());
+
+        // 3. Zarządzanie przedmiotami
+        Przedmiot przedmiotInformatyka = new Przedmiot("Informatyka");
+        przedmiotInformatyka.setNazwa("Inf.");
+        Lista.INSTANCJA.listaPrzedmiotow.add(przedmiotInformatyka);
+        System.out.println(Lista.INSTANCJA.listaPrzedmiotow.size());
+        Lista.INSTANCJA.listaPrzedmiotow.remove(0);
     }
 }

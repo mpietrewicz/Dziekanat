@@ -2,7 +2,7 @@ Napisz program do obsługi dziekanatu.
 Musi umożliwiać:
 1.          Zarządzanie studentami (wstaw, usuń, edytuj) // zrealizowano
 2.          Zarządzanie nauczycielami // zrealizowano
-3.          Zarządzanie przedmiotami
+3.          Zarządzanie przedmiotami // zrealizowano
 4.          Zarządzanie ocenami
 5.          Zarządzanie grupami
 6.          Nauczyciele są powiązani z przedmiotami, które prowadzą
