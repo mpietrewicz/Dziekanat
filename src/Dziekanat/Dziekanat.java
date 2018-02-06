@@ -1,6 +1,7 @@
 package Dziekanat;
 
 public class Dziekanat {
+    public static final int LICZBA_PUNKTOW_ECTS_POTRZEBNA_DO_PROMOCJI = 20;
 
     public static void main(String[] args) {
         // 1. Zarządzanie studentami (wstaw, usuń, edytuj)

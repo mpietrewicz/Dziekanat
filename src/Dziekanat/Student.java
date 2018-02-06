@@ -1,5 +1,7 @@
 package Dziekanat;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 import java.util.ArrayList;
 
 public class Student extends Osoba{
@@ -32,6 +34,14 @@ public class Student extends Osoba{
         return punktyECTS;
     }
 
+    public Status wyznaczStatusStudenta() {
+        if (policzLiczbePunktowECTS() >= Dziekanat.LICZBA_PUNKTOW_ECTS_POTRZEBNA_DO_PROMOCJI) {
+            return Status.PROMOCJA;
+        } else {
+            return Status.BRAK_PROMOCJI;
+        }
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -40,6 +50,7 @@ public class Student extends Osoba{
                 ", grupy=" + grupy +
                 " oceny=" + oceny +
                 " uzyskane punkty ECTS=" + policzLiczbePunktowECTS() +
+                " status studenta=" + wyznaczStatusStudenta() +
                 '}';
     }
 }

@@ -10,7 +10,7 @@ Musi umożliwiać:
 8.          Grupy mają przypisane przedmioty w których uczestniczą // zrealizowano
 9.          Studentom można wystawiać oceny za poszczególne przedmioty // zrealizowano
 10.        Każdy przedmiot posiada ilość punktów ECTS, którą student zdobywa za zaliczenie // zrealizowano
-11.        Określenie dla studenta aktualnego statusu (czy zdobył wystarczającą liczbę punktów ECTS do przejścia na kolejny semestr)
+11.        Określenie dla studenta aktualnego statusu (czy zdobył wystarczającą liczbę punktów ECTS do przejścia na kolejny semestr) // zrealizowano
 12.        Zapis i wczytanie stanu aplikacji (plik/baza danych)
 13.        Wykorzystać dziedziczenie // zrealizowano - z klasy Osoba dziedziczą: Student i Nauczyciel
 14.        Wykorzystać kompozycję // zrealizowano - dodano do klasy Ocena pola typu Przedmiot
