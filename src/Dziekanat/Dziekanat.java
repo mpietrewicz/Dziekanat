@@ -14,6 +14,14 @@ public class Dziekanat {
         for (Student student : Lista.INSTANCJA.listaStudentow) {
             System.out.println(student);
         }
-
+        // 2. Zarządzanie nauczycielami
+        Nauczyciel nauczycielAdam = new Nauczyciel("Adam", "Nowak");
+        Lista.INSTANCJA.listaNauczycieli.add(nauczycielAdam);
+        Lista.INSTANCJA.listaNauczycieli.get(0).setImie("Wojciech");
+        for (Nauczyciel nauczyciel : Lista.INSTANCJA.listaNauczycieli) {
+            System.out.println(nauczyciel);
+        }
+        Lista.INSTANCJA.listaNauczycieli.remove(0);
+        System.out.println(Lista.INSTANCJA.listaNauczycieli.size());
     }
 }
