@@ -1,0 +1,19 @@
+Napisz program do obsługi dziekanatu.
+Musi umożliwiać:
+1.          Zarządzanie studentami (wstaw, usuń, edytuj)
+2.          Zarządzanie nauczycielami
+3.          Zarządzanie przedmiotami
+4.          Zarządzanie ocenami
+5.          Zarządzanie grupami
+6.          Nauczyciele są powiązani z przedmiotami, które prowadzą
+7.          Studenci są powiązani z grupami
+8.          Grupy mają przypisane przedmioty w których uczestniczą
+9.          Studentom można wystawiać oceny za poszczególne przedmioty
+10.        Każdy przedmiot posiada ilość punktów ECTS, którą student zdobywa za zaliczenie
+11.        Określenie dla studenta aktualnego statusu (czy zdobył wystarczającą liczbę punktów ECTS do przejścia na kolejny semestr)
+12.        Zapis i wczytanie stanu aplikacji (plik/baza danych)
+13.        Wykorzystać dziedziczenie
+14.        Wykorzystać kompozycję
+15.        Wykorzystać funkcje wirtualne (C++) / interfejsy (java)
+16.        Wykorzystać szablon klas (C++) / klasy abstrakcyjne (java)
+17.        Wykorzystać szablon funkcji / metody abstrakcyjne (java)
