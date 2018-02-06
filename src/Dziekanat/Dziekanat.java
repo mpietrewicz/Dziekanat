@@ -41,5 +41,13 @@ public class Dziekanat {
         Grupa grupa1a = new Grupa("1a");
         Lista.INSTANCJA.listaGrup.add(grupa1a);
         System.out.println(Lista.INSTANCJA.listaGrup.get(0));
+
+        // 6. Nauczyciele są powiązani z przedmiotami, które prowadzą
+        Nauczyciel nauczycielMarek = new Nauczyciel("Marek", "Pietrewicz");
+        Przedmiot matematyka = new Przedmiot("matematyka");
+        nauczycielMarek.dodajPrzedmiot(matematyka);
+        System.out.println(nauczycielMarek);
+        nauczycielMarek.usunPrzedmiot(matematyka);
+        System.out.println(nauczycielMarek);
     }
 }
