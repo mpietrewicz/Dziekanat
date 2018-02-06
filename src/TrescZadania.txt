@@ -1,6 +1,6 @@
 Napisz program do obsługi dziekanatu.
 Musi umożliwiać:
-1.          Zarządzanie studentami (wstaw, usuń, edytuj)
+1.          Zarządzanie studentami (wstaw, usuń, edytuj) // zrealizowano
 2.          Zarządzanie nauczycielami
 3.          Zarządzanie przedmiotami
 4.          Zarządzanie ocenami

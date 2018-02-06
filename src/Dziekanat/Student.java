@@ -9,6 +9,14 @@ public class Student {
         this.nazwisko = nazwisko;
     }
 
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
