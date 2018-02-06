@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Student extends Osoba{
     ArrayList<Grupa> grupy = new ArrayList<Grupa>();
+    ArrayList<Ocena> oceny = new ArrayList<Ocena>();
 
     public Student(String imie, String nazwisko) {
         super(imie, nazwisko);
@@ -17,12 +18,17 @@ public class Student extends Osoba{
         this.grupy.remove(grupa);
     }
 
+    public void dodajOcene(Ocena ocena) {
+        this.oceny.add(ocena);
+    }
+
     @Override
     public String toString() {
         return "Student{" +
-                "imie='" + imie + '\'' +
+                ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
                 ", grupy=" + grupy +
+                "oceny=" + oceny +
                 '}';
     }
 }

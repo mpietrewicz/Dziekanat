@@ -33,7 +33,8 @@ public class Dziekanat {
         Lista.INSTANCJA.listaPrzedmiotow.remove(0);
 
         // 4. Zarządzanie ocenami
-        Ocena ocena = new Ocena(5);
+        Przedmiot geografia = new Przedmiot("geografia");
+        Ocena ocena = new Ocena(5, geografia);
         ocena.setStopien(4);
         Lista.INSTANCJA.listaOcen.add(ocena);
 
@@ -69,5 +70,15 @@ public class Dziekanat {
         grupa4d.dodajPrzedmiot(jAngielski);
         System.out.println(grupa4c);
         System.out.println(grupa4d);
+
+        // 9. Studentom można wystawiać oceny za poszczególne przedmioty
+        Student romek = new Student("Romek", "Jarząbek");
+        Przedmiot fizyka = new Przedmiot("fizyka");
+        Ocena ocenaZaFizyke = new Ocena(3, fizyka);
+        romek.dodajOcene(ocenaZaFizyke);
+        Przedmiot chemia = new Przedmiot("chemia");
+        romek.dodajOcene(new Ocena(4, chemia));
+        ocenaZaFizyke.setStopien(5);
+        System.out.println(romek);
     }
 }
