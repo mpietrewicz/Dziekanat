@@ -12,7 +12,7 @@ Musi umożliwiać:
 10.        Każdy przedmiot posiada ilość punktów ECTS, którą student zdobywa za zaliczenie
 11.        Określenie dla studenta aktualnego statusu (czy zdobył wystarczającą liczbę punktów ECTS do przejścia na kolejny semestr)
 12.        Zapis i wczytanie stanu aplikacji (plik/baza danych)
-13.        Wykorzystać dziedziczenie
+13.        Wykorzystać dziedziczenie // zrealizowano - z klasy Osoba dziedziczą: Student i Nauczyciel
 14.        Wykorzystać kompozycję
 15.        Wykorzystać funkcje wirtualne (C++) / interfejsy (java)
 16.        Wykorzystać szablon klas (C++) / klasy abstrakcyjne (java)
