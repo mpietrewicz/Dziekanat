@@ -1,10 +1,11 @@
-package Dziekanat;
+package Dziekanat.ObiektyZarzadzane;
 
+import Dziekanat.MenadzerListyPrzedmiotow;
 import java.util.ArrayList;
 
-public class Grupa implements MenadzerListyPrzedmiotow{
-    String nazwa;
-    ArrayList<Przedmiot> przedmioty = new ArrayList<Przedmiot>();
+public class Grupa implements MenadzerListyPrzedmiotow {
+    private String nazwa;
+    private ArrayList<Przedmiot> przedmioty = new ArrayList<Przedmiot>();
 
     public Grupa(String nazwa) {
         this.nazwa = nazwa;

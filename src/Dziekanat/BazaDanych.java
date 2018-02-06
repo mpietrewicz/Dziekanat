@@ -1,7 +1,9 @@
 package Dziekanat;
+import Dziekanat.ObiektyZarzadzane.*;
+
 import java.util.ArrayList;
 
-public enum Lista {
+public enum BazaDanych {
     INSTANCJA;
 
     public ArrayList<Student> listaStudentow =  new ArrayList<Student>();

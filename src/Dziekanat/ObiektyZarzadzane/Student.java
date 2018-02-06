@@ -1,6 +1,8 @@
-package Dziekanat;
+package Dziekanat.ObiektyZarzadzane;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
+
+import Dziekanat.Dziekanat;
+import Dziekanat.Status;
 
 import java.util.ArrayList;
 
@@ -27,8 +29,8 @@ public class Student extends Osoba{
     public int policzLiczbePunktowECTS() {
         int punktyECTS = 0;
         for (Ocena ocena : this.oceny) {
-            if (ocena.stopien > 2) {
-                punktyECTS += ocena.przedmiot.punktyECTS;
+            if (ocena.getStopien() > 2) {
+                punktyECTS += ocena.getPrzedmiot().getPunktyECTS();
             }
         }
         return punktyECTS;
@@ -45,8 +47,8 @@ public class Student extends Osoba{
     @Override
     public String toString() {
         return "Student{" +
-                ", imie='" + imie + '\'' +
-                ", nazwisko='" + nazwisko + '\'' +
+                ", imie='" + super.getImie() + '\'' +
+                ", nazwisko='" + super.getNazwisko() + '\'' +
                 ", grupy=" + grupy +
                 " oceny=" + oceny +
                 " uzyskane punkty ECTS=" + policzLiczbePunktowECTS() +

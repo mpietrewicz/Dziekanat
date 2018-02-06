@@ -1,9 +1,10 @@
-package Dziekanat;
+package Dziekanat.ObiektyZarzadzane;
 
+import Dziekanat.MenadzerListyPrzedmiotow;
 import java.util.ArrayList;
 
-public class Nauczyciel extends Osoba implements MenadzerListyPrzedmiotow{
-    ArrayList<Przedmiot> przedmioty = new ArrayList<Przedmiot>();
+public class Nauczyciel extends Osoba implements MenadzerListyPrzedmiotow {
+    private ArrayList<Przedmiot> przedmioty = new ArrayList<Przedmiot>();
 
     public Nauczyciel(String imie, String nazwisko) {
         super(imie, nazwisko);
@@ -20,8 +21,8 @@ public class Nauczyciel extends Osoba implements MenadzerListyPrzedmiotow{
     @Override
     public String toString() {
         return "Nauczyciel{" +
-                "imie='" + imie + '\'' +
-                ", nazwisko='" + nazwisko + '\'' +
+                "imie='" + super.getImie() + '\'' +
+                ", nazwisko='" + super.getNazwisko() + '\'' +
                 ", przedmioty=" + przedmioty +
                 '}';
     }

@@ -1,18 +1,24 @@
-package Dziekanat;
-
-import java.util.ArrayList;
+package Dziekanat.ObiektyZarzadzane;
 
 public class Przedmiot {
-    String nazwa;
-    int punktyECTS;
+    private String nazwa;
+    private int punktyECTS;
 
     public Przedmiot(String nazwa, int punktyECTS) {
         this.nazwa = nazwa;
         this.punktyECTS = punktyECTS;
     }
 
+    public String getNazwa() {
+        return nazwa;
+    }
+
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
+    }
+
+    public int getPunktyECTS() {
+        return punktyECTS;
     }
 
     public void setPunktyECTS(int punktyECTS) {

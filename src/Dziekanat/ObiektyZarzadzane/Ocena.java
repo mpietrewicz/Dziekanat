@@ -1,16 +1,24 @@
-package Dziekanat;
+package Dziekanat.ObiektyZarzadzane;
 
 public class Ocena {
-    int stopien;
-    Przedmiot przedmiot;
+    private int stopien;
+    private Przedmiot przedmiot;
 
     public Ocena(int stopien, Przedmiot przedmiot) {
         this.stopien = stopien;
         this.przedmiot = przedmiot;
     }
 
+    public int getStopien() {
+        return stopien;
+    }
+
     public void setStopien(int stopien) {
         this.stopien = stopien;
+    }
+
+    public Przedmiot getPrzedmiot() {
+        return przedmiot;
     }
 
     public void setPrzedmiot(Przedmiot przedmiot) {

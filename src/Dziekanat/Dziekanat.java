@@ -1,48 +1,50 @@
 package Dziekanat;
 
+import Dziekanat.ObiektyZarzadzane.*;
+
 public class Dziekanat {
     public static final int LICZBA_PUNKTOW_ECTS_POTRZEBNA_DO_PROMOCJI = 20;
 
     public static void main(String[] args) {
         // 1. Zarządzanie studentami (wstaw, usuń, edytuj)
         Student studentJan = new Student("Jan", "Kowalski");
-        Lista.INSTANCJA.listaStudentow.add(studentJan);
+        BazaDanych.INSTANCJA.listaStudentow.add(studentJan);
         Student studentAnna = new Student("Anna", "Nowak");
-        Lista.INSTANCJA.listaStudentow.add(studentAnna);
-        Lista.INSTANCJA.listaStudentow.remove(0);
+        BazaDanych.INSTANCJA.listaStudentow.add(studentAnna);
+        BazaDanych.INSTANCJA.listaStudentow.remove(0);
         studentAnna.setImie("Magda");
         studentAnna.setNazwisko("Kowalska");
-        for (Student student : Lista.INSTANCJA.listaStudentow) {
+        for (Student student : BazaDanych.INSTANCJA.listaStudentow) {
             System.out.println(student);
         }
 
         // 2. Zarządzanie nauczycielami
         Nauczyciel nauczycielAdam = new Nauczyciel("Adam", "Nowak");
-        Lista.INSTANCJA.listaNauczycieli.add(nauczycielAdam);
-        Lista.INSTANCJA.listaNauczycieli.get(0).setImie("Wojciech");
-        for (Nauczyciel nauczyciel : Lista.INSTANCJA.listaNauczycieli) {
+        BazaDanych.INSTANCJA.listaNauczycieli.add(nauczycielAdam);
+        BazaDanych.INSTANCJA.listaNauczycieli.get(0).setImie("Wojciech");
+        for (Nauczyciel nauczyciel : BazaDanych.INSTANCJA.listaNauczycieli) {
             System.out.println(nauczyciel);
         }
-        Lista.INSTANCJA.listaNauczycieli.remove(0);
-        System.out.println(Lista.INSTANCJA.listaNauczycieli.size());
+        BazaDanych.INSTANCJA.listaNauczycieli.remove(0);
+        System.out.println(BazaDanych.INSTANCJA.listaNauczycieli.size());
 
         // 3. Zarządzanie przedmiotami
         Przedmiot przedmiotInformatyka = new Przedmiot("Informatyka", 8);
         przedmiotInformatyka.setNazwa("Inf.");
-        Lista.INSTANCJA.listaPrzedmiotow.add(przedmiotInformatyka);
-        System.out.println(Lista.INSTANCJA.listaPrzedmiotow.size());
-        Lista.INSTANCJA.listaPrzedmiotow.remove(0);
+        BazaDanych.INSTANCJA.listaPrzedmiotow.add(przedmiotInformatyka);
+        System.out.println(BazaDanych.INSTANCJA.listaPrzedmiotow.size());
+        BazaDanych.INSTANCJA.listaPrzedmiotow.remove(0);
 
         // 4. Zarządzanie ocenami
         Przedmiot geografia = new Przedmiot("geografia", 6);
         Ocena ocena = new Ocena(5, geografia);
         ocena.setStopien(4);
-        Lista.INSTANCJA.listaOcen.add(ocena);
+        BazaDanych.INSTANCJA.listaOcen.add(ocena);
 
         // 5. Zarządzanie grupami
         Grupa grupa1a = new Grupa("1a");
-        Lista.INSTANCJA.listaGrup.add(grupa1a);
-        System.out.println(Lista.INSTANCJA.listaGrup.get(0));
+        BazaDanych.INSTANCJA.listaGrup.add(grupa1a);
+        System.out.println(BazaDanych.INSTANCJA.listaGrup.get(0));
 
         // 6. Nauczyciele są powiązani z przedmiotami, które prowadzą
         Nauczyciel nauczycielMarek = new Nauczyciel("Marek", "Pietrewicz");
