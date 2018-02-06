@@ -22,13 +22,24 @@ public class Student extends Osoba{
         this.oceny.add(ocena);
     }
 
+    public int policzLiczbePunktowECTS() {
+        int punktyECTS = 0;
+        for (Ocena ocena : this.oceny) {
+            if (ocena.stopien > 2) {
+                punktyECTS += ocena.przedmiot.punktyECTS;
+            }
+        }
+        return punktyECTS;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 ", imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
                 ", grupy=" + grupy +
-                "oceny=" + oceny +
+                " oceny=" + oceny +
+                " uzyskane punkty ECTS=" + policzLiczbePunktowECTS() +
                 '}';
     }
 }

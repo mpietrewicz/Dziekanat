@@ -26,14 +26,14 @@ public class Dziekanat {
         System.out.println(Lista.INSTANCJA.listaNauczycieli.size());
 
         // 3. Zarządzanie przedmiotami
-        Przedmiot przedmiotInformatyka = new Przedmiot("Informatyka");
+        Przedmiot przedmiotInformatyka = new Przedmiot("Informatyka", 8);
         przedmiotInformatyka.setNazwa("Inf.");
         Lista.INSTANCJA.listaPrzedmiotow.add(przedmiotInformatyka);
         System.out.println(Lista.INSTANCJA.listaPrzedmiotow.size());
         Lista.INSTANCJA.listaPrzedmiotow.remove(0);
 
         // 4. Zarządzanie ocenami
-        Przedmiot geografia = new Przedmiot("geografia");
+        Przedmiot geografia = new Przedmiot("geografia", 6);
         Ocena ocena = new Ocena(5, geografia);
         ocena.setStopien(4);
         Lista.INSTANCJA.listaOcen.add(ocena);
@@ -45,7 +45,7 @@ public class Dziekanat {
 
         // 6. Nauczyciele są powiązani z przedmiotami, które prowadzą
         Nauczyciel nauczycielMarek = new Nauczyciel("Marek", "Pietrewicz");
-        Przedmiot matematyka = new Przedmiot("matematyka");
+        Przedmiot matematyka = new Przedmiot("matematyka", 10);
         nauczycielMarek.dodajPrzedmiot(matematyka);
         System.out.println(nauczycielMarek);
         nauczycielMarek.usunPrzedmiot(matematyka);
@@ -61,8 +61,8 @@ public class Dziekanat {
 
         // 8. Grupy mają przypisane przedmioty w których uczestniczą
         Grupa grupa4c = new Grupa("4C");
-        Przedmiot jPolski = new Przedmiot("język polski");
-        Przedmiot jAngielski = new Przedmiot("język angielski");
+        Przedmiot jPolski = new Przedmiot("język polski", 9);
+        Przedmiot jAngielski = new Przedmiot("język angielski", 8);
         grupa4c.dodajPrzedmiot(jPolski);
         grupa4c.dodajPrzedmiot(jAngielski);
         grupa4c.usunPrzedmiot(jAngielski);
@@ -73,12 +73,22 @@ public class Dziekanat {
 
         // 9. Studentom można wystawiać oceny za poszczególne przedmioty
         Student romek = new Student("Romek", "Jarząbek");
-        Przedmiot fizyka = new Przedmiot("fizyka");
+        Przedmiot fizyka = new Przedmiot("fizyka", 12);
         Ocena ocenaZaFizyke = new Ocena(3, fizyka);
         romek.dodajOcene(ocenaZaFizyke);
-        Przedmiot chemia = new Przedmiot("chemia");
+        Przedmiot chemia = new Przedmiot("chemia", 9);
         romek.dodajOcene(new Ocena(4, chemia));
         ocenaZaFizyke.setStopien(5);
         System.out.println(romek);
+
+        // 10. Każdy przedmiot posiada ilość punktów ECTS, którą student zdobywa za zaliczenie
+        Student michal = new Student("Michał", "Kowal");
+        Przedmiot wychFiz = new Przedmiot("Wychowanie Fizyczne", 2);
+        Ocena ocenaZaWF = new Ocena(5, wychFiz);
+        michal.dodajOcene(ocenaZaWF);
+        Przedmiot jNiemiecki = new Przedmiot("j. niemiecki", 6);
+        michal.dodajOcene(new Ocena(4, jNiemiecki));
+        michal.dodajOcene(new Ocena(2, new Przedmiot("j. francuski", 9)));
+        System.out.println(michal);
     }
 }
