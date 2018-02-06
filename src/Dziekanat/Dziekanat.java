@@ -36,5 +36,10 @@ public class Dziekanat {
         Ocena ocena = new Ocena(5);
         ocena.setStopien(4);
         Lista.INSTANCJA.listaOcen.add(ocena);
+
+        // 5. Zarządzanie grupami
+        Grupa grupa1a = new Grupa("1a");
+        Lista.INSTANCJA.listaGrup.add(grupa1a);
+        System.out.println(Lista.INSTANCJA.listaGrup.get(0));
     }
 }

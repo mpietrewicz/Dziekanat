@@ -8,4 +8,5 @@ public enum Lista {
     public ArrayList<Nauczyciel> listaNauczycieli =  new ArrayList<Nauczyciel>();
     public ArrayList<Przedmiot> listaPrzedmiotow =  new ArrayList<Przedmiot>();
     public ArrayList<Ocena> listaOcen =  new ArrayList<Ocena>();
+    public ArrayList<Grupa> listaGrup =  new ArrayList<Grupa>();
 }

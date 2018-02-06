@@ -4,7 +4,7 @@ Musi umożliwiać:
 2.          Zarządzanie nauczycielami // zrealizowano
 3.          Zarządzanie przedmiotami // zrealizowano
 4.          Zarządzanie ocenami // zrealizowano
-5.          Zarządzanie grupami
+5.          Zarządzanie grupami // zrealizowano
 6.          Nauczyciele są powiązani z przedmiotami, które prowadzą
 7.          Studenci są powiązani z grupami
 8.          Grupy mają przypisane przedmioty w których uczestniczą
