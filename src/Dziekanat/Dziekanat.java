@@ -31,5 +31,10 @@ public class Dziekanat {
         Lista.INSTANCJA.listaPrzedmiotow.add(przedmiotInformatyka);
         System.out.println(Lista.INSTANCJA.listaPrzedmiotow.size());
         Lista.INSTANCJA.listaPrzedmiotow.remove(0);
+
+        // 4. Zarządzanie ocenami
+        Ocena ocena = new Ocena(5);
+        ocena.setStopien(4);
+        Lista.INSTANCJA.listaOcen.add(ocena);
     }
 }
