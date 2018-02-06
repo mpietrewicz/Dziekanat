@@ -3,6 +3,13 @@ package Dziekanat;
 public class Dziekanat {
 
     public static void main(String[] args) {
-        Student student = new Student("Jan", "Kowalski");
+        Student studentJan = new Student("Jan", "Kowalski");
+        Lista.INSTANCJA.listaStudentow.add(studentJan);
+        Student studentAnna = new Student("Anna", "Nowak");
+        Lista.INSTANCJA.listaStudentow.add(studentAnna);
+        Lista.INSTANCJA.listaStudentow.remove(0);
+        for (Student student : Lista.INSTANCJA.listaStudentow) {
+            System.out.println(student);
+        }
     }
 }

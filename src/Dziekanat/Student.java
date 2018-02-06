@@ -8,4 +8,12 @@ public class Student {
         this.imie = imie;
         this.nazwisko = nazwisko;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                '}';
+    }
 }
