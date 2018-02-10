@@ -23,6 +23,10 @@ public class Grupa extends Obiekt implements MenadzerListyPrzedmiotow {
         this.przedmioty.remove(przedmiot);
     }
 
+    public ArrayList<Przedmiot> getPrzedmioty() {
+        return przedmioty;
+    }
+
     @Override
     public String toString() {
         return "Grupa{" +

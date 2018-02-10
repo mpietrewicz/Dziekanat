@@ -10,7 +10,6 @@ public class Osoba extends Obiekt{
     }
 
     public Osoba() {
-
     }
 
     public String getImie() {

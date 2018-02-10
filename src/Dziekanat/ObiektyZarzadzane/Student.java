@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class Student extends Osoba{
     private ArrayList<Grupa> grupy = new ArrayList<Grupa>();
-    private ArrayList<Ocena> oceny = new ArrayList<Ocena>();
 
     public Student(String imie, String nazwisko) {
         super(imie, nazwisko);
@@ -26,15 +25,13 @@ public class Student extends Osoba{
         this.grupy.remove(grupa);
     }
 
-    public void dodajOcene(Ocena ocena) {
-        this.oceny.add(ocena);
-    }
-
     public int policzLiczbePunktowECTS() {
         int punktyECTS = 0;
-        for (Ocena ocena : this.oceny) {
-            if (ocena.getStopien() > 2) {
-                punktyECTS += ocena.getPrzedmiot().getPunktyECTS();
+        for (Grupa grupa : this.grupy) {
+            for (Przedmiot przedmiot : grupa.getPrzedmioty()) {
+                if (przedmiot.getOcena().getStopien() > 2) {
+                    punktyECTS += przedmiot.getPunktyECTS();
+                }
             }
         }
         return punktyECTS;
@@ -54,7 +51,6 @@ public class Student extends Osoba{
                 ", imie='" + super.getImie() + '\'' +
                 ", nazwisko='" + super.getNazwisko() + '\'' +
                 ", grupy=" + grupy +
-                " oceny=" + oceny +
                 " uzyskane punkty ECTS=" + policzLiczbePunktowECTS() +
                 " status studenta=" + wyznaczStatusStudenta() +
                 '}';

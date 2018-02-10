@@ -32,8 +32,8 @@ public class Dziekanat {
                     break;
                 case 4:
                     // 4. Zarządzanie ocenami
-                    OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
-                    zarzadzaj(ocenaMenadzer, "ocenami");
+                    //OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
+                    //zarzadzaj(ocenaMenadzer, "ocenami");
                     break;
                 case 5:
                     // 5. Zarządzanie grupami
@@ -72,23 +72,32 @@ public class Dziekanat {
         System.out.println(grupa4d);
 
         // 9. Studentom można wystawiać oceny za poszczególne przedmioty
+        // Zmiana założeń - przedmiot powinien mieć ocenę, a nie ocena przedmiot
         Student romek = new Student("Romek", "Jarząbek");
         Przedmiot fizyka = new Przedmiot("fizyka", 12);
-        Ocena ocenaZaFizyke = new Ocena(3, fizyka);
-        romek.dodajOcene(ocenaZaFizyke);
+        Ocena ocenaZaFizyke = new Ocena(3);
+        fizyka.setOcena(ocenaZaFizyke);
         Przedmiot chemia = new Przedmiot("chemia", 9);
-        romek.dodajOcene(new Ocena(4, chemia));
-        ocenaZaFizyke.setStopien(5);
+        chemia.setOcena(new Ocena(4));
+        Grupa grupaScisla = new Grupa("ścisła");
+        grupaScisla.dodajPrzedmiot(fizyka);
+        grupaScisla.dodajPrzedmiot(chemia);
+        romek.dodajGrupe(grupaScisla);
         System.out.println(romek);
 
-        // 10. Każdy przedmiot posiada ilość punktów ECTS, którą student zdobywa za zaliczenie
+        // 10. Każdy przedmiot posiada ocenę oraz ilość punktów ECTS, którą student zdobywa za zaliczenie
         Student michal = new Student("Michał", "Kowal");
+        Grupa grupaSportowa = new Grupa("grupaSportowa");
         Przedmiot wychFiz = new Przedmiot("Wychowanie Fizyczne", 2);
-        Ocena ocenaZaWF = new Ocena(5, wychFiz);
-        michal.dodajOcene(ocenaZaWF);
+        Ocena ocenaZaWF = new Ocena(5);
+        wychFiz.setOcena(ocenaZaWF);
+        grupaSportowa.dodajPrzedmiot(wychFiz);
+        michal.dodajGrupe(grupaSportowa);
         Przedmiot jNiemiecki = new Przedmiot("j. niemiecki", 6);
-        michal.dodajOcene(new Ocena(4, jNiemiecki));
-        michal.dodajOcene(new Ocena(2, new Przedmiot("j. francuski", 9)));
+        Grupa grupaJezykowa = new Grupa("grupaJezykowa");
+        grupaJezykowa.dodajPrzedmiot(jNiemiecki);
+        jNiemiecki.setOcena(new Ocena(4));
+        michal.dodajGrupe(grupaJezykowa);
         System.out.println(michal);
     }
 
