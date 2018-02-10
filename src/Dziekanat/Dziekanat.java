@@ -54,7 +54,7 @@ public class Dziekanat {
         // 7. Studenci są powiązani z grupami
         Grupa grupa3b = new Grupa("grupa 3b");
         Student janek = new Student("Jan", "Nowak");
-        janek.dodajDoGrupy(grupa3b);
+        janek.dodajGrupe(grupa3b);
         System.out.println(janek);
         janek.usunZGrupy(grupa3b);
         System.out.println(janek);

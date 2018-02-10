@@ -1,7 +1,9 @@
 package Dziekanat.Zarzadzanie;
 
 import Dziekanat.BazaDanych;
+import Dziekanat.ObiektyZarzadzane.Grupa;
 import Dziekanat.ObiektyZarzadzane.Obiekt;
+import Dziekanat.ObiektyZarzadzane.Ocena;
 import Dziekanat.ObiektyZarzadzane.Student;
 
 import java.io.IOException;
@@ -14,6 +16,8 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
     public Obiekt dodaj() throws IOException {
         Student student = new Student();
         nadajDaneOsobowe(student,"student");
+        GrupaMenadzer grupaMenadzer = new GrupaMenadzer();
+        student.dodajGrupe((Grupa) grupaMenadzer.dodaj());
         listaStudentow.add(student);
         return student;
     }
