@@ -20,8 +20,7 @@ public class OcenaMenadzer extends ObiektMenadzer implements Operacje{
 
     @Override
     public void usun() throws IOException {
-        int indexZListyOcenDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaOcen, "ocena");
-        listaOcen.remove(indexZListyOcenDoUsuniecia);
+        super.usunElementZListyObiektow(listaOcen, "ocena");
     }
 
     @Override

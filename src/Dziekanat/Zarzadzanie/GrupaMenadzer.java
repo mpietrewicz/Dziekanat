@@ -23,8 +23,7 @@ public class GrupaMenadzer extends ObiektMenadzer implements Operacje {
 
     @Override
     public void usun() throws IOException {
-        int indexZListyGrupDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaGrup, "grupa");
-        listaGrup.remove(indexZListyGrupDoUsuniecia);
+        super.usunElementZListyObiektow(listaGrup, "grupa");
     }
 
     @Override

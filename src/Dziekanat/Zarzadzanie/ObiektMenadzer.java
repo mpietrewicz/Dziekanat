@@ -48,4 +48,13 @@ public class ObiektMenadzer implements Operacje{
     public void wyswietl() {
 
     }
+
+    public void usunElementZListyObiektow(ArrayList listaObiektow, String kontekst) throws IOException {
+        if (listaObiektow.size() > 0) {
+            int indexZListyStudentowDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaObiektow, kontekst);
+            listaObiektow.remove(indexZListyStudentowDoUsuniecia);
+        } else {
+            System.out.println("Brak elementów do usunięcia");
+        }
+    }
 }

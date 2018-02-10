@@ -23,8 +23,7 @@ public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
 
     @Override
     public void usun() throws IOException {
-        int indexZListyNauczycieliDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaNauczycieli, "nauczyciel");
-        listaNauczycieli.remove(indexZListyNauczycieliDoUsuniecia);
+        super.usunElementZListyObiektow(listaNauczycieli, "nauczyciel");
     }
 
     @Override

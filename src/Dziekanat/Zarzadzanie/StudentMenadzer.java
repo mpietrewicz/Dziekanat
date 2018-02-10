@@ -24,8 +24,7 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
 
     @Override
     public void usun() throws IOException {
-        int indexZListyStudentowDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaStudentow, "student");
-        listaStudentow.remove(indexZListyStudentowDoUsuniecia);
+        super.usunElementZListyObiektow(listaStudentow, "student");
     }
 
     @Override

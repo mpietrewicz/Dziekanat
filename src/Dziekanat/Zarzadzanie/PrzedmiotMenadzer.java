@@ -27,8 +27,7 @@ public class PrzedmiotMenadzer extends ObiektMenadzer implements Operacje {
 
     @Override
     public void usun() throws IOException {
-        int indexZListyPrzedmiotowDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaPrzedmiotow, "przedmiot");
-        listaPrzedmiotow.remove(indexZListyPrzedmiotowDoUsuniecia);
+        super.usunElementZListyObiektow(listaPrzedmiotow, "przedmiot");
     }
 
     @Override
