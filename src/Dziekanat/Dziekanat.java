@@ -26,9 +26,8 @@ public class Dziekanat {
         zarzadzaj(ocenaMenadzer, "ocenami");
 
         // 5. Zarządzanie grupami
-        Grupa grupa1a = new Grupa("1a");
-        BazaDanych.INSTANCJA.listaGrup.add(grupa1a);
-        System.out.println(BazaDanych.INSTANCJA.listaGrup.get(0));
+        GrupaMenadzer grupaMenadzer = new GrupaMenadzer();
+        zarzadzaj(grupaMenadzer, "grupami");
 
         // 6. Nauczyciele są powiązani z przedmiotami, które prowadzą
         Nauczyciel nauczycielMarek = new Nauczyciel("Marek", "Pietrewicz");
