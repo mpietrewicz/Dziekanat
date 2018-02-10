@@ -6,21 +6,24 @@ import Dziekanat.ObiektyZarzadzane.Nauczyciel;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class NauczycielMenadzer extends ObiektMenadzer{
+public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
     private ArrayList<Nauczyciel> listaNauczycieli = BazaDanych.INSTANCJA.listaNauczycieli;
 
-    public void dodajNauczyciela() throws IOException {
+    @Override
+    public void dodaj() throws IOException {
         Nauczyciel nauczyciel = new Nauczyciel();
         nadajDaneOsobowe(nauczyciel,"nauczyciel");
         listaNauczycieli.add(nauczyciel);
     }
 
-    public void usunNauczyciela() throws IOException {
+    @Override
+    public void usun() throws IOException {
         int indexZListyNauczycieliDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaNauczycieli, "nauczyciel");
         listaNauczycieli.remove(indexZListyNauczycieliDoUsuniecia);
     }
 
-    public void wyswietlListeObiektow() {
+    @Override
+    public void wyswietl() {
         super.wyswietlListeObiektow(listaNauczycieli);
     }
 }

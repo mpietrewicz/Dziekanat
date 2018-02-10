@@ -2,6 +2,7 @@ package Dziekanat;
 
 import Dziekanat.ObiektyZarzadzane.*;
 import Dziekanat.Zarzadzanie.NauczycielMenadzer;
+import Dziekanat.Zarzadzanie.PrzedmiotMenadzer;
 import Dziekanat.Zarzadzanie.StudentMenadzer;
 import Dziekanat.Zarzadzanie.WierszPolecen;
 
@@ -21,13 +22,13 @@ public class Dziekanat {
                     1, 4);
             switch (idOperacji) {
                 case 1:
-                    studentMenadzer.dodajStudenta();
+                    studentMenadzer.dodaj();
                     break;
                 case 2:
-                    studentMenadzer.usunStudenta();
+                    studentMenadzer.usun();
                     break;
                 case 3:
-                    studentMenadzer.wyswietlListeObiektow();
+                    studentMenadzer.wyswietl();
                     break;
             }
         }
@@ -42,23 +43,37 @@ public class Dziekanat {
                     1, 4);
             switch (idOperacji) {
                 case 1:
-                    nauczycielMenadzer.dodajNauczyciela();
+                    nauczycielMenadzer.dodaj();
                     break;
                 case 2:
-                    nauczycielMenadzer.usunNauczyciela();
+                    nauczycielMenadzer.usun();
                     break;
                 case 3:
-                    nauczycielMenadzer.wyswietlListeObiektow();
+                    nauczycielMenadzer.wyswietl();
                     break;
             }
         }
 
         // 3. Zarządzanie przedmiotami
-        Przedmiot przedmiotInformatyka = new Przedmiot("Informatyka", 8);
-        przedmiotInformatyka.setNazwa("Inf.");
-        BazaDanych.INSTANCJA.listaPrzedmiotow.add(przedmiotInformatyka);
-        System.out.println(BazaDanych.INSTANCJA.listaPrzedmiotow.size());
-        BazaDanych.INSTANCJA.listaPrzedmiotow.remove(0);
+        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
+
+        idOperacji = 0;
+        while (idOperacji != 4) {
+            System.out.println("Zarządzanie przedmiotami: \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
+            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
+                    1, 4);
+            switch (idOperacji) {
+                case 1:
+                    przedmiotMenadzer.dodaj();
+                    break;
+                case 2:
+                    przedmiotMenadzer.usun();
+                    break;
+                case 3:
+                    przedmiotMenadzer.wyswietl();
+                    break;
+            }
+        }
 
         // 4. Zarządzanie ocenami
         Przedmiot geografia = new Przedmiot("geografia", 6);

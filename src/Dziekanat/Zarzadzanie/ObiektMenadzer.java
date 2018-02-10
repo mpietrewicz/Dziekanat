@@ -7,26 +7,31 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 class ObiektMenadzer {
+    WierszPolecen wierszPolecen = WierszPolecen.INSTANCJA;
 
     void wyswietlListeObiektow(ArrayList listaObiektow) {
         int index = 0;
-        for (Object obiekt : listaObiektow) {
-            System.out.println(index +": " +obiekt);
-            index++;
+        if (listaObiektow.size() > 0) {
+            for (Object obiekt : listaObiektow) {
+                System.out.println(index +": " +obiekt);
+                index++;
+            }
+        } else {
+            System.out.println("Brak elementów do wyświetlenia");
         }
     }
 
     void nadajDaneOsobowe(Osoba osoba, String kontekst) throws IOException {
-        String imie = WierszPolecen.INSTANCJA.wczytajTekst("Podaj imię "+kontekst +"a");
+        String imie = wierszPolecen.wczytajTekst("Podaj imię "+kontekst +"a");
         osoba.setImie(imie);
-        String nazwisko = WierszPolecen.INSTANCJA.wczytajTekst("Podaj nazwisko "+kontekst +"a");
+        String nazwisko = wierszPolecen.wczytajTekst("Podaj nazwisko "+kontekst +"a");
         osoba.setNazwisko(nazwisko);
     }
 
     int wybierzIndexObiektuZListyObiektow(ArrayList listaObiektow, String kontekst) throws IOException {
         wyswietlListeObiektow(listaObiektow);
-        return WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Wybierz index " +kontekst +"a, którego chcesz usunąć",
-                        0, listaObiektow.size());
+        return wierszPolecen.wczytajLiczbeZZakresu("Wybierz index " +kontekst +"a, którego chcesz usunąć",
+                        0, listaObiektow.size()-1);
     }
 
 }
