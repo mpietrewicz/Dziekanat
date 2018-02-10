@@ -1,10 +1,7 @@
 package Dziekanat;
 
 import Dziekanat.ObiektyZarzadzane.*;
-import Dziekanat.Zarzadzanie.NauczycielMenadzer;
-import Dziekanat.Zarzadzanie.PrzedmiotMenadzer;
-import Dziekanat.Zarzadzanie.StudentMenadzer;
-import Dziekanat.Zarzadzanie.WierszPolecen;
+import Dziekanat.Zarzadzanie.*;
 
 import java.io.IOException;
 
@@ -14,72 +11,19 @@ public class Dziekanat {
     public static void main(String[] args) throws IOException {
         // 1. Zarządzanie studentami (wstaw, usuń, edytuj)
         StudentMenadzer studentMenadzer = new StudentMenadzer();
-
-        int idOperacji = 0;
-        while (idOperacji != 4) {
-            System.out.println("Zarządzanie studentem: \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
-            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
-                    1, 4);
-            switch (idOperacji) {
-                case 1:
-                    studentMenadzer.dodaj();
-                    break;
-                case 2:
-                    studentMenadzer.usun();
-                    break;
-                case 3:
-                    studentMenadzer.wyswietl();
-                    break;
-            }
-        }
+        zarzadzaj(studentMenadzer, "studentami");
 
         // 2. Zarządzanie nauczycielami
         NauczycielMenadzer nauczycielMenadzer = new NauczycielMenadzer();
-
-        idOperacji = 0;
-        while (idOperacji != 4) {
-            System.out.println("Zarządzanie nauczycielami: \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
-            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
-                    1, 4);
-            switch (idOperacji) {
-                case 1:
-                    nauczycielMenadzer.dodaj();
-                    break;
-                case 2:
-                    nauczycielMenadzer.usun();
-                    break;
-                case 3:
-                    nauczycielMenadzer.wyswietl();
-                    break;
-            }
-        }
+        zarzadzaj(nauczycielMenadzer, "nauczycielami");
 
         // 3. Zarządzanie przedmiotami
         PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
-
-        idOperacji = 0;
-        while (idOperacji != 4) {
-            System.out.println("Zarządzanie przedmiotami: \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
-            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
-                    1, 4);
-            switch (idOperacji) {
-                case 1:
-                    przedmiotMenadzer.dodaj();
-                    break;
-                case 2:
-                    przedmiotMenadzer.usun();
-                    break;
-                case 3:
-                    przedmiotMenadzer.wyswietl();
-                    break;
-            }
-        }
+        zarzadzaj(przedmiotMenadzer, "przedmiotami");
 
         // 4. Zarządzanie ocenami
-        Przedmiot geografia = new Przedmiot("geografia", 6);
-        Ocena ocena = new Ocena(5, geografia);
-        ocena.setStopien(4);
-        BazaDanych.INSTANCJA.listaOcen.add(ocena);
+        OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
+        zarzadzaj(ocenaMenadzer, "ocenami");
 
         // 5. Zarządzanie grupami
         Grupa grupa1a = new Grupa("1a");
@@ -133,5 +77,25 @@ public class Dziekanat {
         michal.dodajOcene(new Ocena(4, jNiemiecki));
         michal.dodajOcene(new Ocena(2, new Przedmiot("j. francuski", 9)));
         System.out.println(michal);
+    }
+
+    private static void zarzadzaj(ObiektMenadzer obiektMenadzer, final String kontekst) throws IOException {
+        int idOperacji = 0;
+        while (idOperacji != 4) {
+            System.out.println("Zarządzanie " + kontekst + ": \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
+            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
+                    1, 4);
+            switch (idOperacji) {
+                case 1:
+                    obiektMenadzer.dodaj();
+                    break;
+                case 2:
+                    obiektMenadzer.usun();
+                    break;
+                case 3:
+                    obiektMenadzer.wyswietl();
+                    break;
+            }
+        }
     }
 }

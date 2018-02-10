@@ -6,7 +6,7 @@ import Dziekanat.ObiektyZarzadzane.Student;
 import java.io.IOException;
 import java.util.ArrayList;
 
-class ObiektMenadzer {
+public class ObiektMenadzer implements Operacje{
     WierszPolecen wierszPolecen = WierszPolecen.INSTANCJA;
 
     void wyswietlListeObiektow(ArrayList listaObiektow) {
@@ -34,4 +34,18 @@ class ObiektMenadzer {
                         0, listaObiektow.size()-1);
     }
 
+    @Override
+    public void dodaj() throws IOException {
+
+    }
+
+    @Override
+    public void usun() throws IOException {
+
+    }
+
+    @Override
+    public void wyswietl() {
+
+    }
 }

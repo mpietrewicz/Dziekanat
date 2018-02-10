@@ -9,6 +9,10 @@ public class Ocena {
         this.przedmiot = przedmiot;
     }
 
+    public Ocena(int stopien) {
+        this.stopien = stopien;
+    }
+
     public int getStopien() {
         return stopien;
     }
