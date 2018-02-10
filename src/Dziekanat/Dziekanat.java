@@ -9,25 +9,39 @@ public class Dziekanat {
     public static final int LICZBA_PUNKTOW_ECTS_POTRZEBNA_DO_PROMOCJI = 20;
 
     public static void main(String[] args) throws IOException {
-        // 1. Zarządzanie studentami (wstaw, usuń, edytuj)
-        StudentMenadzer studentMenadzer = new StudentMenadzer();
-        zarzadzaj(studentMenadzer, "studentami");
-
-        // 2. Zarządzanie nauczycielami
-        NauczycielMenadzer nauczycielMenadzer = new NauczycielMenadzer();
-        zarzadzaj(nauczycielMenadzer, "nauczycielami");
-
-        // 3. Zarządzanie przedmiotami
-        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
-        zarzadzaj(przedmiotMenadzer, "przedmiotami");
-
-        // 4. Zarządzanie ocenami
-        OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
-        zarzadzaj(ocenaMenadzer, "ocenami");
-
-        // 5. Zarządzanie grupami
-        GrupaMenadzer grupaMenadzer = new GrupaMenadzer();
-        zarzadzaj(grupaMenadzer, "grupami");
+        int idOperacji = 0;
+        while (idOperacji != 6) {
+            System.out.println("Zarządzaj: \n1. Studentami, 2. Nauczycielami, 3. Przedmiotami. 4. Ocenami 5. Grupami 6. Wyjdź");
+            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id kontekstu",
+                    1, 6);
+            switch (idOperacji) {
+                case 1:
+                    // 1. Zarządzanie studentami (wstaw, usuń, edytuj)
+                    StudentMenadzer studentMenadzer = new StudentMenadzer();
+                    zarzadzaj(studentMenadzer, "studentami");
+                    break;
+                case 2:
+                    // 2. Zarządzanie nauczycielami
+                    NauczycielMenadzer nauczycielMenadzer = new NauczycielMenadzer();
+                    zarzadzaj(nauczycielMenadzer, "nauczycielami");
+                    break;
+                case 3:
+                    // 3. Zarządzanie przedmiotami
+                    PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
+                    zarzadzaj(przedmiotMenadzer, "przedmiotami");
+                    break;
+                case 4:
+                    // 4. Zarządzanie ocenami
+                    OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
+                    zarzadzaj(ocenaMenadzer, "ocenami");
+                    break;
+                case 5:
+                    // 5. Zarządzanie grupami
+                    GrupaMenadzer grupaMenadzer = new GrupaMenadzer();
+                    zarzadzaj(grupaMenadzer, "grupami");
+                    break;
+            }
+        }
 
         // 6. Nauczyciele są powiązani z przedmiotami, które prowadzą
         Nauczyciel nauczycielMarek = new Nauczyciel("Marek", "Pietrewicz");
