@@ -7,8 +7,8 @@ import Dziekanat.Status;
 import java.util.ArrayList;
 
 public class Student extends Osoba{
-    ArrayList<Grupa> grupy = new ArrayList<Grupa>();
-    ArrayList<Ocena> oceny = new ArrayList<Ocena>();
+    private ArrayList<Grupa> grupy = new ArrayList<Grupa>();
+    private ArrayList<Ocena> oceny = new ArrayList<Ocena>();
 
     public Student(String imie, String nazwisko) {
         super(imie, nazwisko);

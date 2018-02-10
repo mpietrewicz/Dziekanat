@@ -1,21 +1,34 @@
 package Dziekanat;
 
 import Dziekanat.ObiektyZarzadzane.*;
+import Dziekanat.Zarzadzanie.StudentMenadzer;
+import Dziekanat.Zarzadzanie.WierszPolecen;
+
+import java.io.IOException;
 
 public class Dziekanat {
     public static final int LICZBA_PUNKTOW_ECTS_POTRZEBNA_DO_PROMOCJI = 20;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // 1. Zarządzanie studentami (wstaw, usuń, edytuj)
-        Student studentJan = new Student("Jan", "Kowalski");
-        BazaDanych.INSTANCJA.listaStudentow.add(studentJan);
-        Student studentAnna = new Student("Anna", "Nowak");
-        BazaDanych.INSTANCJA.listaStudentow.add(studentAnna);
-        BazaDanych.INSTANCJA.listaStudentow.remove(0);
-        studentAnna.setImie("Magda");
-        studentAnna.setNazwisko("Kowalska");
-        for (Student student : BazaDanych.INSTANCJA.listaStudentow) {
-            System.out.println(student);
+        StudentMenadzer studentMenadzer = new StudentMenadzer();
+
+        int idOperacji = 0;
+        while (idOperacji != 4) {
+            System.out.println("Zarządzanie studentem: \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
+            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
+                    1, 4);
+            switch (idOperacji) {
+                case 1:
+                    studentMenadzer.dodajStudenta();
+                    break;
+                case 2:
+                    studentMenadzer.usunStudenta();
+                    break;
+                case 3:
+                    studentMenadzer.wyswietlListeObiektow();
+                    break;
+            }
         }
 
         // 2. Zarządzanie nauczycielami
