@@ -9,6 +9,10 @@ public class Osoba {
         this.nazwisko = nazwisko;
     }
 
+    public Osoba() {
+
+    }
+
     public String getImie() {
         return imie;
     }

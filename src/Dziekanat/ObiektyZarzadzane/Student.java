@@ -14,6 +14,10 @@ public class Student extends Osoba{
         super(imie, nazwisko);
     }
 
+    public Student() {
+        super();
+    }
+
     public void dodajDoGrupy(Grupa grupa) {
         this.grupy.add(grupa);
     }

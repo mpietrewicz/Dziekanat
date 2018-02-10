@@ -1,6 +1,7 @@
 package Dziekanat;
 
 import Dziekanat.ObiektyZarzadzane.*;
+import Dziekanat.Zarzadzanie.NauczycielMenadzer;
 import Dziekanat.Zarzadzanie.StudentMenadzer;
 import Dziekanat.Zarzadzanie.WierszPolecen;
 
@@ -32,14 +33,25 @@ public class Dziekanat {
         }
 
         // 2. Zarządzanie nauczycielami
-        Nauczyciel nauczycielAdam = new Nauczyciel("Adam", "Nowak");
-        BazaDanych.INSTANCJA.listaNauczycieli.add(nauczycielAdam);
-        BazaDanych.INSTANCJA.listaNauczycieli.get(0).setImie("Wojciech");
-        for (Nauczyciel nauczyciel : BazaDanych.INSTANCJA.listaNauczycieli) {
-            System.out.println(nauczyciel);
+        NauczycielMenadzer nauczycielMenadzer = new NauczycielMenadzer();
+
+        idOperacji = 0;
+        while (idOperacji != 4) {
+            System.out.println("Zarządzanie nauczycielami: \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
+            idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
+                    1, 4);
+            switch (idOperacji) {
+                case 1:
+                    nauczycielMenadzer.dodajNauczyciela();
+                    break;
+                case 2:
+                    nauczycielMenadzer.usunNauczyciela();
+                    break;
+                case 3:
+                    nauczycielMenadzer.wyswietlListeObiektow();
+                    break;
+            }
         }
-        BazaDanych.INSTANCJA.listaNauczycieli.remove(0);
-        System.out.println(BazaDanych.INSTANCJA.listaNauczycieli.size());
 
         // 3. Zarządzanie przedmiotami
         Przedmiot przedmiotInformatyka = new Przedmiot("Informatyka", 8);
