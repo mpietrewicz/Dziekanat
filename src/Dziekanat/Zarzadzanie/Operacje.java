@@ -1,10 +1,12 @@
 package Dziekanat.Zarzadzanie;
 
+import Dziekanat.ObiektyZarzadzane.Obiekt;
+
 import java.io.IOException;
 
 public interface Operacje {
 
-    void dodaj() throws IOException;
+    Obiekt dodaj() throws IOException;
 
     void usun() throws IOException;
 

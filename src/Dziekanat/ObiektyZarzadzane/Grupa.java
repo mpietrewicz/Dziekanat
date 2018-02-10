@@ -3,7 +3,7 @@ package Dziekanat.ObiektyZarzadzane;
 import Dziekanat.MenadzerListyPrzedmiotow;
 import java.util.ArrayList;
 
-public class Grupa implements MenadzerListyPrzedmiotow {
+public class Grupa extends Obiekt implements MenadzerListyPrzedmiotow {
     private String nazwa;
     private ArrayList<Przedmiot> przedmioty = new ArrayList<Przedmiot>();
 

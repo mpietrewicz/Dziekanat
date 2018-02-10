@@ -1,6 +1,6 @@
 package Dziekanat.ObiektyZarzadzane;
 
-public class Osoba {
+public class Osoba extends Obiekt{
     private String imie;
     private String nazwisko;
 

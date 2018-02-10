@@ -1,6 +1,6 @@
 package Dziekanat.ObiektyZarzadzane;
 
-public class Przedmiot {
+public class Przedmiot extends Obiekt{
     private String nazwa;
     private int punktyECTS;
 

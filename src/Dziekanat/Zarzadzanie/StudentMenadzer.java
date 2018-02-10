@@ -1,6 +1,7 @@
 package Dziekanat.Zarzadzanie;
 
 import Dziekanat.BazaDanych;
+import Dziekanat.ObiektyZarzadzane.Obiekt;
 import Dziekanat.ObiektyZarzadzane.Student;
 
 import java.io.IOException;
@@ -10,10 +11,11 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
     private ArrayList<Student> listaStudentow = BazaDanych.INSTANCJA.listaStudentow;
 
     @Override
-    public void dodaj() throws IOException {
+    public Obiekt dodaj() throws IOException {
         Student student = new Student();
         nadajDaneOsobowe(student,"student");
         listaStudentow.add(student);
+        return student;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package Dziekanat.Zarzadzanie;
 
+import Dziekanat.ObiektyZarzadzane.Obiekt;
 import Dziekanat.ObiektyZarzadzane.Osoba;
-import Dziekanat.ObiektyZarzadzane.Student;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,8 +35,8 @@ public class ObiektMenadzer implements Operacje{
     }
 
     @Override
-    public void dodaj() throws IOException {
-
+    public Obiekt dodaj() throws IOException {
+        return null;
     }
 
     @Override

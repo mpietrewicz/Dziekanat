@@ -1,6 +1,6 @@
 package Dziekanat.ObiektyZarzadzane;
 
-public class Ocena {
+public class Ocena extends Obiekt {
     private int stopien;
     private Przedmiot przedmiot;
 
