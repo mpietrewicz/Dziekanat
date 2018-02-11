@@ -34,9 +34,9 @@ public class Dziekanat {
                     zarzadzaj(przedmiotMenadzer, "przedmiotami");
                     break;
                 case 4:
-                    // 4. Zarządzanie ocenami
-                    //OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
-                    //zarzadzaj(ocenaMenadzer, "ocenami");
+                    // 4. Zarządzanie ocenami w kontekście Studenta
+                    OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
+                    zarzadzaj(ocenaMenadzer, "ocenami");
                     break;
                 case 5:
                     // 5. Zarządzanie grupami

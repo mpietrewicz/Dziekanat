@@ -1,10 +1,7 @@
 package Dziekanat.Zarzadzanie;
 
 import Dziekanat.BazaDanych;
-import Dziekanat.ObiektyZarzadzane.Grupa;
-import Dziekanat.ObiektyZarzadzane.Obiekt;
-import Dziekanat.ObiektyZarzadzane.Ocena;
-import Dziekanat.ObiektyZarzadzane.Student;
+import Dziekanat.ObiektyZarzadzane.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,6 +27,38 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
     @Override
     public void wyswietl() {
         super.wyswietlListeObiektow(listaStudentow);
+    }
+
+    public Przedmiot wybierzPrzedmiotStudenta() throws IOException {
+        ObiektMenadzer obiektMenadzer = new ObiektMenadzer();
+
+        if (!obiektMenadzer.wyswietlListeObiektow(listaStudentow)) {
+            System.out.println("Brak studentów");
+            return null;
+        }
+        int indexStudenta = wierszPolecen.wczytajLiczbeZZakresu("Wybierz index studenta",
+                0, listaStudentow.size()-1);
+        Student student = listaStudentow.get(indexStudenta);
+
+        ArrayList<Grupa> grupyStudenta = student.getGrupy();
+        if (!obiektMenadzer.wyswietlListeObiektow(grupyStudenta)) {
+            System.out.println("Brak grup studenta");
+            return null;
+        }
+        int indexGrupy = wierszPolecen.wczytajLiczbeZZakresu("Wybierz index grupy",
+                0, grupyStudenta.size()-1);
+        Grupa grupa = grupyStudenta.get(indexGrupy);
+
+        ArrayList<Przedmiot> przedmiotyZGrupyStudenta = grupa.getPrzedmioty();
+        if (!obiektMenadzer.wyswietlListeObiektow(przedmiotyZGrupyStudenta)) {
+            System.out.println("Brak przedmiotów studenta");
+            return null;
+        }
+        int indexPrzedmiotu = wierszPolecen.wczytajLiczbeZZakresu("Wybierz index przedmiotu",
+                0, przedmiotyZGrupyStudenta.size()-1);
+        Przedmiot przedmiot = przedmiotyZGrupyStudenta.get(indexPrzedmiotu);
+
+        return przedmiot;
     }
 
 }

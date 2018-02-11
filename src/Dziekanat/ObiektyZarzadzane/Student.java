@@ -25,12 +25,18 @@ public class Student extends Osoba{
         this.grupy.remove(grupa);
     }
 
+    public ArrayList<Grupa> getGrupy() {
+        return grupy;
+    }
+
     public int policzLiczbePunktowECTS() {
         int punktyECTS = 0;
         for (Grupa grupa : this.grupy) {
             for (Przedmiot przedmiot : grupa.getPrzedmioty()) {
-                if (przedmiot.getOcena().getStopien() > 2) {
-                    punktyECTS += przedmiot.getPunktyECTS();
+                if (przedmiot.getOcena() != null) {
+                    if (przedmiot.getOcena().getStopien() > 2) {
+                        punktyECTS += przedmiot.getPunktyECTS();
+                    }
                 }
             }
         }

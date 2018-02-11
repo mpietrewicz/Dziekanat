@@ -9,15 +9,17 @@ import java.util.ArrayList;
 public class ObiektMenadzer implements Operacje{
     WierszPolecen wierszPolecen = WierszPolecen.INSTANCJA;
 
-    void wyswietlListeObiektow(ArrayList listaObiektow) {
+    boolean wyswietlListeObiektow(ArrayList listaObiektow) {
         int index = 0;
         if (listaObiektow.size() > 0) {
             for (Object obiekt : listaObiektow) {
                 System.out.println(index +": " +obiekt);
                 index++;
             }
+            return true;
         } else {
             System.out.println("Brak elementów do wyświetlenia");
+            return false;
         }
     }
 
