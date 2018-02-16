@@ -4,12 +4,16 @@ import Dziekanat.ObiektyZarzadzane.*;
 import Dziekanat.Zarzadzanie.*;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class Dziekanat {
     public static final int LICZBA_PUNKTOW_ECTS_POTRZEBNA_DO_PROMOCJI = 20;
+    private static final int MAX_ILOSC_PROB_LOGOWANIA = 3;
 
     public static void main(String[] args) throws IOException {
 
+        zaloguj();
         przykladoweOperacje();
 
         int idOperacji = 0;
@@ -134,4 +138,26 @@ public class Dziekanat {
         BazaDanych.INSTANCJA.listaStudentow.add(michal);
         System.out.println(michal);
     }
+
+    private static void zaloguj() throws IOException {
+        int iloscProbLogowania = 0;
+        while (iloscProbLogowania < MAX_ILOSC_PROB_LOGOWANIA) {
+            Properties daneDostepowe = new Properties();
+            InputStream inputStream = Dziekanat.class.getResourceAsStream("dostep.properties");
+            daneDostepowe.load(inputStream);
+
+            String uzytkownik = WierszPolecen.INSTANCJA.wczytajTekst("Podaj nazwe uzytkownika: ");
+            String haslo = WierszPolecen.INSTANCJA.wczytajTekst("Podaj hasło uzytkownika: ");
+
+            if (uzytkownik.equals(daneDostepowe.getProperty("uzytkownik")) && haslo.equals(daneDostepowe.getProperty("haslo"))) {
+                System.out.println("UDOSTĘPNIONO");
+                return;
+            } else {
+                System.out.println("Wprowadzono bledne dane dostępowe!");
+                iloscProbLogowania ++;
+            }
+        }
+        System.exit(1);
+    }
+
 }
