@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 public class OcenaMenadzer extends ObiektMenadzer implements Operacje{
     private ArrayList<Ocena> listaOcen = BazaDanych.INSTANCJA.listaOcen;
-    StudentMenadzer studentMenadzer = new StudentMenadzer();
+    private StudentMenadzer studentMenadzer = new StudentMenadzer();
+    private String kontekst = "oceny";
 
     @Override
     public Obiekt dodaj() throws IOException {
@@ -26,7 +27,7 @@ public class OcenaMenadzer extends ObiektMenadzer implements Operacje{
 
     @Override
     public Object edytuj() throws IOException {
-        int indexZListyOcen = wybierzIndexObiektuZListyObiektow(listaOcen, "ocena");
+        int indexZListyOcen = wybierzIndexObiektuZListyObiektow(listaOcen, kontekst);
         Ocena ocenaDoEdycji = listaOcen.get(indexZListyOcen);
         ocenaDoEdycji.setStopien(wierszPolecen.wczytajLiczbeZZakresu("Podaj stopień oceny (2-6)", 1, 6));
         return ocenaDoEdycji;
@@ -37,7 +38,7 @@ public class OcenaMenadzer extends ObiektMenadzer implements Operacje{
         Przedmiot przedmiot = studentMenadzer.wybierzPrzedmiotStudenta();
         if (przedmiot != null) {
             przedmiot.setOcena(null);
-            super.usunElementZListyObiektow(listaOcen, "ocena");
+            super.usunElementZListyObiektow(listaOcen, kontekst);
         }
     }
 

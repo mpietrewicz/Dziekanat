@@ -10,11 +10,12 @@ import java.util.ArrayList;
 
 public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
     private ArrayList<Nauczyciel> listaNauczycieli = BazaDanych.INSTANCJA.listaNauczycieli;
+    private String kontekst = "nauczyciela";
 
     @Override
     public Obiekt dodaj() throws IOException {
         Nauczyciel nauczyciel = new Nauczyciel();
-        nadajDaneOsobowe(nauczyciel,"nauczyciel");
+        nadajDaneOsobowe(nauczyciel, kontekst);
         PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
         nauczyciel.dodajPrzedmiot((Przedmiot) przedmiotMenadzer.dodaj());
         listaNauczycieli.add(nauczyciel);
@@ -23,15 +24,15 @@ public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
 
     @Override
     public Object edytuj() throws IOException {
-        int indexZListyNauczycieli = wybierzIndexObiektuZListyObiektow(listaNauczycieli, "nauczyciel");
+        int indexZListyNauczycieli = wybierzIndexObiektuZListyObiektow(listaNauczycieli, kontekst);
         Nauczyciel nauczycielDoEdycji = listaNauczycieli.get(indexZListyNauczycieli);
-        nadajDaneOsobowe(nauczycielDoEdycji, "nauczyciel");
+        nadajDaneOsobowe(nauczycielDoEdycji, kontekst);
         return nauczycielDoEdycji;
     }
 
     @Override
     public void usun() throws IOException {
-        super.usunElementZListyObiektow(listaNauczycieli, "nauczyciel");
+        super.usunElementZListyObiektow(listaNauczycieli, kontekst);
     }
 
     @Override

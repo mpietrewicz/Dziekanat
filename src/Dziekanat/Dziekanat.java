@@ -53,7 +53,7 @@ public class Dziekanat {
         while (idOperacji != 5) {
             System.out.println("Zarządzanie " + kontekst + ": \n1. Dodaj, 2. Usuń, 3. Edytuj 4. Wyświetl 5. Wyjdź");
             idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
-                    1, 4);
+                    1, 5);
             switch (idOperacji) {
                 case 1:
                     obiektMenadzer.dodaj();

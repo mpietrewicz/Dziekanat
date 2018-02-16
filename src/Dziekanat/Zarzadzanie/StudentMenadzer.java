@@ -8,11 +8,12 @@ import java.util.ArrayList;
 
 public class StudentMenadzer extends ObiektMenadzer implements Operacje{
     private ArrayList<Student> listaStudentow = BazaDanych.INSTANCJA.listaStudentow;
+    private String kontekst = "studenta";
 
     @Override
     public Obiekt dodaj() throws IOException {
         Student student = new Student();
-        nadajDaneOsobowe(student,"student");
+        nadajDaneOsobowe(student, kontekst);
         GrupaMenadzer grupaMenadzer = new GrupaMenadzer();
         student.dodajGrupe((Grupa) grupaMenadzer.dodaj());
         listaStudentow.add(student);
@@ -21,15 +22,15 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
 
     @Override
     public Object edytuj() throws IOException {
-        int indexZListyStudentow = wybierzIndexObiektuZListyObiektow(listaStudentow, "student");
+        int indexZListyStudentow = wybierzIndexObiektuZListyObiektow(listaStudentow, kontekst);
         Student studentDoEdycji = listaStudentow.get(indexZListyStudentow);
-        nadajDaneOsobowe(studentDoEdycji,"student");
+        nadajDaneOsobowe(studentDoEdycji,kontekst);
         return studentDoEdycji;
     }
 
     @Override
     public void usun() throws IOException {
-        super.usunElementZListyObiektow(listaStudentow, "student");
+        super.usunElementZListyObiektow(listaStudentow, kontekst);
     }
 
     @Override
@@ -37,7 +38,7 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
         super.wyswietlListeObiektow(listaStudentow);
     }
 
-    public Przedmiot wybierzPrzedmiotStudenta() throws IOException {
+    Przedmiot wybierzPrzedmiotStudenta() throws IOException {
         ObiektMenadzer obiektMenadzer = new ObiektMenadzer();
 
         if (!obiektMenadzer.wyswietlListeObiektow(listaStudentow)) {

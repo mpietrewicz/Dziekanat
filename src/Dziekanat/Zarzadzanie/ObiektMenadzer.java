@@ -24,15 +24,15 @@ public class ObiektMenadzer implements Operacje{
     }
 
     void nadajDaneOsobowe(Osoba osoba, String kontekst) throws IOException {
-        String imie = wierszPolecen.wczytajTekst("Podaj imię "+kontekst +"a");
+        String imie = wierszPolecen.wczytajTekst("Podaj imię "+kontekst);
         osoba.setImie(imie);
-        String nazwisko = wierszPolecen.wczytajTekst("Podaj nazwisko "+kontekst +"a");
+        String nazwisko = wierszPolecen.wczytajTekst("Podaj nazwisko "+kontekst);
         osoba.setNazwisko(nazwisko);
     }
 
     int wybierzIndexObiektuZListyObiektow(ArrayList listaObiektow, String kontekst) throws IOException {
         wyswietlListeObiektow(listaObiektow);
-        return wierszPolecen.wczytajLiczbeZZakresu("Wybierz index " +kontekst +"a, którego chcesz usunąć",
+        return wierszPolecen.wczytajLiczbeZZakresu("Wybierz index " +kontekst +", którego chcesz usunąć",
                         0, listaObiektow.size()-1);
     }
 
