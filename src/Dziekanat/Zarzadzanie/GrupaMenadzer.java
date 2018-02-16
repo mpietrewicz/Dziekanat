@@ -22,6 +22,14 @@ public class GrupaMenadzer extends ObiektMenadzer implements Operacje {
     }
 
     @Override
+    public Object edytuj() throws IOException {
+        int indexZListyGrup = wybierzIndexObiektuZListyObiektow(listaGrup, "student");
+        Grupa grupaDoEdycji = listaGrup.get(indexZListyGrup);
+        grupaDoEdycji.setNazwa(wierszPolecen.wczytajTekst("Podaj nazwę grupy"));
+        return grupaDoEdycji;
+    }
+
+    @Override
     public void usun() throws IOException {
         super.usunElementZListyObiektow(listaGrup, "grupa");
     }

@@ -22,6 +22,14 @@ public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
     }
 
     @Override
+    public Object edytuj() throws IOException {
+        int indexZListyNauczycieli = wybierzIndexObiektuZListyObiektow(listaNauczycieli, "nauczyciel");
+        Nauczyciel nauczycielDoEdycji = listaNauczycieli.get(indexZListyNauczycieli);
+        nadajDaneOsobowe(nauczycielDoEdycji, "nauczyciel");
+        return nauczycielDoEdycji;
+    }
+
+    @Override
     public void usun() throws IOException {
         super.usunElementZListyObiektow(listaNauczycieli, "nauczyciel");
     }

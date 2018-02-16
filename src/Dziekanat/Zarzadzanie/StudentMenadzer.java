@@ -20,6 +20,14 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
     }
 
     @Override
+    public Object edytuj() throws IOException {
+        int indexZListyStudentow = wybierzIndexObiektuZListyObiektow(listaStudentow, "student");
+        Student studentDoEdycji = listaStudentow.get(indexZListyStudentow);
+        nadajDaneOsobowe(studentDoEdycji,"student");
+        return studentDoEdycji;
+    }
+
+    @Override
     public void usun() throws IOException {
         super.usunElementZListyObiektow(listaStudentow, "student");
     }

@@ -25,6 +25,14 @@ public class OcenaMenadzer extends ObiektMenadzer implements Operacje{
     }
 
     @Override
+    public Object edytuj() throws IOException {
+        int indexZListyOcen = wybierzIndexObiektuZListyObiektow(listaOcen, "ocena");
+        Ocena ocenaDoEdycji = listaOcen.get(indexZListyOcen);
+        ocenaDoEdycji.setStopien(wierszPolecen.wczytajLiczbeZZakresu("Podaj stopień oceny (2-6)", 1, 6));
+        return ocenaDoEdycji;
+    }
+
+    @Override
     public void usun() throws IOException {
         Przedmiot przedmiot = studentMenadzer.wybierzPrzedmiotStudenta();
         if (przedmiot != null) {

@@ -50,8 +50,8 @@ public class Dziekanat {
 
     private static void zarzadzaj(ObiektMenadzer obiektMenadzer, final String kontekst) throws IOException {
         int idOperacji = 0;
-        while (idOperacji != 4) {
-            System.out.println("Zarządzanie " + kontekst + ": \n1. Dodaj, 2. Usuń, 3. Wyświetl. 4. Wyjdź");
+        while (idOperacji != 5) {
+            System.out.println("Zarządzanie " + kontekst + ": \n1. Dodaj, 2. Usuń, 3. Edytuj 4. Wyświetl 5. Wyjdź");
             idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id operacji",
                     1, 4);
             switch (idOperacji) {
@@ -62,6 +62,9 @@ public class Dziekanat {
                     obiektMenadzer.usun();
                     break;
                 case 3:
+                    obiektMenadzer.edytuj();
+                    break;
+                case 4:
                     obiektMenadzer.wyswietl();
                     break;
             }

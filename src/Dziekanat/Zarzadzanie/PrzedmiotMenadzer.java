@@ -26,6 +26,15 @@ public class PrzedmiotMenadzer extends ObiektMenadzer implements Operacje {
     }
 
     @Override
+    public Object edytuj() throws IOException {
+        int indexZListyPrzedmiotow = wybierzIndexObiektuZListyObiektow(listaPrzedmiotow, "przedmiot");
+        Przedmiot przedmiotDoEdycji = listaPrzedmiotow.get(indexZListyPrzedmiotow);
+        przedmiotDoEdycji.setNazwa(wierszPolecen.wczytajTekst("Podaj nazwę przedmiotu"));
+        przedmiotDoEdycji.setPunktyECTS(wierszPolecen.wczytajLiczbeZZakresu("Podaj liczbę punktów ECTS (1-10)", 1, 10));
+        return przedmiotDoEdycji;
+    }
+
+    @Override
     public void usun() throws IOException {
         super.usunElementZListyObiektow(listaPrzedmiotow, "przedmiot");
     }

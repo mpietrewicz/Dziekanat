@@ -8,6 +8,8 @@ public interface Operacje {
 
     Obiekt dodaj() throws IOException;
 
+    Object edytuj() throws IOException;
+
     void usun() throws IOException;
 
     void wyswietl();
