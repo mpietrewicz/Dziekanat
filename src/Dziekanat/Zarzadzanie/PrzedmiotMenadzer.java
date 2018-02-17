@@ -13,17 +13,29 @@ public class PrzedmiotMenadzer extends ObiektMenadzer implements Operacje {
     private ArrayList<Ocena> listaOcen = BazaDanych.INSTANCJA.listaOcen;
     private String kontekst = "przedmiotu";
 
+    private boolean czyDodacOcene;
+
+    public PrzedmiotMenadzer(boolean czyDodacOcene) {
+        this.czyDodacOcene = czyDodacOcene;
+    }
+
     @Override
     public Obiekt dodaj() throws IOException {
         String nazwa = wierszPolecen.wczytajTekst("Podaj nazwę "+kontekst);
         int punktyECTS = wierszPolecen.wczytajLiczbeZZakresu("Podaj liczbę punktów ECTS (1-10)", 1, 10);
         Przedmiot przedmiot = new Przedmiot(nazwa, punktyECTS);
+        if (czyDodacOcene) {
+            dodajOceneZaPrzedmiot(przedmiot);
+        }
+        listaPrzedmiotow.add(przedmiot);
+        return przedmiot;
+    }
+
+    private void dodajOceneZaPrzedmiot(Przedmiot przedmiot) throws IOException {
         int stopien = wierszPolecen.wczytajLiczbeZZakresu("Podaj stopień oceny (2-6)", 1, 6);
         Ocena ocena = new Ocena(stopien);
         listaOcen.add(ocena);
         przedmiot.setOcena(ocena);
-        listaPrzedmiotow.add(przedmiot);
-        return przedmiot;
     }
 
     @Override

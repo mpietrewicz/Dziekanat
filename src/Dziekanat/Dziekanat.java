@@ -17,10 +17,10 @@ public class Dziekanat {
         przykladoweOperacje();
 
         int idOperacji = 0;
-        while (idOperacji != 6) {
-            System.out.println("Zarządzaj: \n1. Studentami, 2. Nauczycielami, 3. Przedmiotami. 4. Ocenami 5. Grupami 6. Wyjdź");
+        while (idOperacji != 5) {
+            System.out.println("Zarządzaj: \n1. Studentami, 2. Nauczycielami, 3. Przedmiotami. 4. Grupami 5. Wyjdź");
             idOperacji = WierszPolecen.INSTANCJA.wczytajLiczbeZZakresu("Podaj id kontekstu",
-                    1, 6);
+                    1, 5);
             switch (idOperacji) {
                 case 1:
                     // 1. Zarządzanie studentami (wstaw, usuń, edytuj)
@@ -34,16 +34,11 @@ public class Dziekanat {
                     break;
                 case 3:
                     // 3. Zarządzanie przedmiotami
-                    PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
+                    PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(false);
                     zarzadzaj(przedmiotMenadzer, "przedmiotami");
                     break;
                 case 4:
-                    // 4. Zarządzanie ocenami w kontekście Studenta
-                    OcenaMenadzer ocenaMenadzer = new OcenaMenadzer();
-                    zarzadzaj(ocenaMenadzer, "ocenami");
-                    break;
-                case 5:
-                    // 5. Zarządzanie grupami
+                    // 4. Zarządzanie grupami
                     GrupaMenadzer grupaMenadzer = new GrupaMenadzer();
                     zarzadzaj(grupaMenadzer, "grupami");
                     break;

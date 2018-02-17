@@ -17,3 +17,6 @@ Musi umożliwiać:
 15.        Wykorzystać funkcje wirtualne (C++) / interfejsy (java) // zrealizowano - metody: dodajPrzedmiot() i usunPrzedmiot() są wykorzystywane klasac: Nauczyciel i Grupa
 16.        Wykorzystać szablon klas (C++) / klasy abstrakcyjne (java)
 17.        Wykorzystać szablon funkcji / metody abstrakcyjne (java)
+Dodatkowe założenia, które powstały w trakcie implementacji:
+18. Usunięcie możliwości dodawania oceny bez kontekstu studenta.
+    Możliwe będzie tylko dodanie oceny przy dodawaniu / edycji studenta.

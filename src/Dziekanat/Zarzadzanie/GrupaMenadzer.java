@@ -16,7 +16,7 @@ public class GrupaMenadzer extends ObiektMenadzer implements Operacje {
     public Obiekt dodaj() throws IOException {
         String nazwa = wierszPolecen.wczytajTekst("Podaj nazwę "+kontekst);
         Grupa grupa = new Grupa(nazwa);
-        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
+        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(true);
         grupa.dodajPrzedmiot((Przedmiot) przedmiotMenadzer.dodaj());
         listaGrup.add(grupa);
         return grupa;

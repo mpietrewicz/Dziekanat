@@ -16,7 +16,7 @@ public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
     public Obiekt dodaj() throws IOException {
         Nauczyciel nauczyciel = new Nauczyciel();
         nadajDaneOsobowe(nauczyciel, kontekst);
-        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer();
+        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(false);
         nauczyciel.dodajPrzedmiot((Przedmiot) przedmiotMenadzer.dodaj());
         listaNauczycieli.add(nauczyciel);
         return nauczyciel;
