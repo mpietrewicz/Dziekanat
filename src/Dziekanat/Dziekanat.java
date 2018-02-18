@@ -6,14 +6,19 @@ import Dziekanat.Zarzadzanie.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.*;
 
 public class Dziekanat {
     public static final int LICZBA_PUNKTOW_ECTS_POTRZEBNA_DO_PROMOCJI = 20;
     private static final int MAX_ILOSC_PROB_LOGOWANIA = 3;
+    private static final boolean WYMAGANE_LOGOWANIE = false;
 
     public static void main(String[] args) throws IOException {
 
-        zaloguj();
+        if (WYMAGANE_LOGOWANIE) {
+            zaloguj();
+        }
+
         przykladoweOperacje();
 
         int idOperacji = 0;
@@ -135,6 +140,16 @@ public class Dziekanat {
     }
 
     private static void zaloguj() throws IOException {
+
+        Logger logger = Logger.getLogger("logowanie");
+        Handler handler = new ConsoleHandler();
+        Formatter formatter = new SimpleFormatter();
+
+        handler.setFormatter(formatter);
+        logger.addHandler(handler);
+        logger.setLevel(Level.WARNING);
+
+
         int iloscProbLogowania = 0;
         while (iloscProbLogowania < MAX_ILOSC_PROB_LOGOWANIA) {
             Properties daneDostepowe = new Properties();
@@ -146,9 +161,11 @@ public class Dziekanat {
 
             if (uzytkownik.equals(daneDostepowe.getProperty("uzytkownik")) && haslo.equals(daneDostepowe.getProperty("haslo"))) {
                 System.out.println("UDOSTĘPNIONO");
+                logger.log(Level.INFO, "Zalogowano pomyślnie");
                 return;
             } else {
                 System.out.println("Wprowadzono bledne dane dostępowe!");
+                logger.log(Level.WARNING, "Błąd logowania! Wprowadzono bledne dane dostępowe!");
                 iloscProbLogowania ++;
             }
         }
