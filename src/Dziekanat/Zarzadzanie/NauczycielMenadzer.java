@@ -7,6 +7,7 @@ import Dziekanat.ObiektyZarzadzane.Przedmiot;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
     private ArrayList<Nauczyciel> listaNauczycieli = BazaDanych.INSTANCJA.listaNauczycieli;
@@ -18,8 +19,10 @@ public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
     public Obiekt dodaj() throws IOException {
         Nauczyciel nauczyciel = new Nauczyciel();
         nadajDaneOsobowe(nauczyciel, kontekst);
-        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(false);
-        nauczyciel.dodajPrzedmiot((Przedmiot) przedmiotMenadzer.dodaj());
+        Przedmiot przedmiot = przedmiotMenadzer.wybierzPrzedmiotZListy(listaPrzedmiotow);
+        if (przedmiot != null) {
+            nauczyciel.dodajPrzedmiot(przedmiot);
+        }
         listaNauczycieli.add(nauczyciel);
         return nauczyciel;
     }

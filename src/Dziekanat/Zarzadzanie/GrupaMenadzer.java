@@ -11,13 +11,17 @@ import java.util.ArrayList;
 public class GrupaMenadzer extends ObiektMenadzer implements Operacje {
     private ArrayList<Grupa> listaGrup = BazaDanych.INSTANCJA.listaGrup;
     private String kontekst = "grupy";
+    private ArrayList<Przedmiot> listaPrzedmiotow = BazaDanych.INSTANCJA.listaPrzedmiotow;
+    PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(false);
 
     @Override
     public Obiekt dodaj() throws IOException {
         String nazwa = wierszPolecen.wczytajTekst("Podaj nazwę "+kontekst);
         Grupa grupa = new Grupa(nazwa);
-        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(false);
-        grupa.dodajPrzedmiot((Przedmiot) przedmiotMenadzer.dodaj());
+        Przedmiot przedmiot = przedmiotMenadzer.wybierzPrzedmiotZListy(listaPrzedmiotow);
+        if (przedmiot != null) {
+            grupa.dodajPrzedmiot(przedmiot);
+        }
         listaGrup.add(grupa);
         return grupa;
     }

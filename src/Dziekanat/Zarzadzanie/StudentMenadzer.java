@@ -9,14 +9,28 @@ import java.util.ArrayList;
 public class StudentMenadzer extends ObiektMenadzer implements Operacje{
     private ArrayList<Student> listaStudentow = BazaDanych.INSTANCJA.listaStudentow;
     private ArrayList<Grupa> listaGrup = BazaDanych.INSTANCJA.listaGrup;
+    private ArrayList<Przedmiot> listaPrzedmiotow = BazaDanych.INSTANCJA.listaPrzedmiotow;
     private String kontekst = "studenta";
     private GrupaMenadzer grupaMenadzer = new GrupaMenadzer();
+    private PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(true);
 
     @Override
     public Obiekt dodaj() throws IOException {
         Student student = new Student();
         nadajDaneOsobowe(student, kontekst);
-        student.dodajGrupe(grupaMenadzer.wybierzGrupeZListy(listaGrup));
+        Grupa grupa = grupaMenadzer.wybierzGrupeZListy(listaGrup);
+        if (grupa != null) {
+            student.dodajGrupe(grupa);
+            ArrayList<Przedmiot> listaPrzedmiotowWGrupie = grupa.getPrzedmioty();
+            ArrayList<Przedmiot> listaPozostalychPrzedmiotow = (ArrayList<Przedmiot>) listaPrzedmiotow.clone();
+            for (Przedmiot przedmiotWGrupie : listaPrzedmiotowWGrupie) {
+                listaPozostalychPrzedmiotow.remove(przedmiotWGrupie);
+            }
+            Przedmiot przedmiot = przedmiotMenadzer.wybierzPrzedmiotZListy(listaPozostalychPrzedmiotow);
+            if (przedmiot != null) {
+                grupa.dodajPrzedmiot(przedmiot);
+            }
+        }
         listaStudentow.add(student);
         return student;
     }
