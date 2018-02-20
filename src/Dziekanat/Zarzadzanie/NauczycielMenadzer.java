@@ -48,13 +48,4 @@ public class NauczycielMenadzer extends ObiektMenadzer implements Operacje{
         return nauczycielDoEdycji;
     }
 
-    @Override
-    public void usun() throws IOException {
-        super.usunElementZListyObiektow(listaNauczycieli, kontekst);
-    }
-
-    @Override
-    public void wyswietl() {
-        super.wyswietlListeObiektow(listaNauczycieli);
-    }
 }

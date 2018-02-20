@@ -47,16 +47,7 @@ public class ObiektMenadzer implements Operacje{
     }
 
     @Override
-    public void usun() throws IOException {
-
-    }
-
-    @Override
-    public void wyswietl() {
-
-    }
-
-    public void usunElementZListyObiektow(ArrayList listaObiektow, String kontekst) throws IOException {
+    public void usun(ArrayList listaObiektow, String kontekst) throws IOException {
         if (listaObiektow.size() > 0) {
             int indexZListyObiektowDoUsuniecia = wybierzIndexObiektuZListyObiektow(listaObiektow, kontekst);
             listaObiektow.remove(indexZListyObiektowDoUsuniecia);
@@ -64,4 +55,10 @@ public class ObiektMenadzer implements Operacje{
             System.out.println("Brak elementów do usunięcia");
         }
     }
+
+    @Override
+    public void wyswietl(ArrayList listaObiektow) {
+        wyswietlListeObiektow(listaObiektow);
+    }
+
 }

@@ -46,15 +46,6 @@ public class PrzedmiotMenadzer extends ObiektMenadzer implements Operacje {
         return przedmiotDoEdycji;
     }
 
-    @Override
-    public void usun() throws IOException {
-        super.usunElementZListyObiektow(listaPrzedmiotow, kontekst);
-    }
-
-    @Override
-    public void wyswietl() {
-        super.wyswietlListeObiektow(listaPrzedmiotow);
-    }
 
     public Przedmiot wybierzPrzedmiotZListy(ArrayList<Przedmiot> lista) throws IOException {
         if (!wyswietlListeObiektow(lista)) {

@@ -30,16 +30,6 @@ public class GrupaMenadzer extends ObiektMenadzer implements Operacje {
         return grupaDoEdycji;
     }
 
-    @Override
-    public void usun() throws IOException {
-        super.usunElementZListyObiektow(listaGrup, kontekst);
-    }
-
-    @Override
-    public void wyswietl() {
-        super.wyswietlListeObiektow(listaGrup);
-    }
-
     public Grupa wybierzGrupeZListy(ArrayList<Grupa> lista) throws IOException {
         if (!wyswietlListeObiektow(lista)) {
             System.out.println("Brak grup studenta");

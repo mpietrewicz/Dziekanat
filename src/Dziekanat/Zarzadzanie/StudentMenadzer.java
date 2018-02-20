@@ -44,14 +44,4 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
         return studentDoEdycji;
     }
 
-    @Override
-    public void usun() throws IOException {
-        super.usunElementZListyObiektow(listaStudentow, kontekst);
-    }
-
-    @Override
-    public void wyswietl() {
-        super.wyswietlListeObiektow(listaStudentow);
-    }
-
 }

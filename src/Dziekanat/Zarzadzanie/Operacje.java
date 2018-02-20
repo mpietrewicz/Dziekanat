@@ -3,6 +3,7 @@ package Dziekanat.Zarzadzanie;
 import Dziekanat.ObiektyZarzadzane.Obiekt;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public interface Operacje {
 
@@ -10,7 +11,7 @@ public interface Operacje {
 
     Object edytuj() throws IOException;
 
-    void usun() throws IOException;
+    void usun(ArrayList listaObiektow, String kontekst) throws IOException;
 
-    void wyswietl();
+    void wyswietl(ArrayList listaObiektow);
 }
