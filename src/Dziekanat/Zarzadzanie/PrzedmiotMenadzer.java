@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class PrzedmiotMenadzer extends ObiektMenadzer implements Operacje {
     private ArrayList<Przedmiot> listaPrzedmiotow = BazaDanych.INSTANCJA.listaPrzedmiotow;
-    private ArrayList<Ocena> listaOcen = BazaDanych.INSTANCJA.listaOcen;
     private String kontekst = "przedmiotu";
 
     private boolean czyDodacOcene;
@@ -35,7 +34,6 @@ public class PrzedmiotMenadzer extends ObiektMenadzer implements Operacje {
     private void dodajOceneZaPrzedmiot(Przedmiot przedmiot) throws IOException {
         int stopien = wierszPolecen.wczytajLiczbeZZakresu("Podaj stopień oceny (2-6)", 1, 6);
         Ocena ocena = new Ocena(stopien);
-        listaOcen.add(ocena);
         przedmiot.setOcena(ocena);
     }
 

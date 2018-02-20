@@ -16,7 +16,6 @@ public class StudentMenadzer extends ObiektMenadzer implements Operacje{
     public Obiekt dodaj() throws IOException {
         Student student = new Student();
         nadajDaneOsobowe(student, kontekst);
-//        student.dodajGrupe((Grupa) grupaMenadzer.dodaj());
         student.dodajGrupe(grupaMenadzer.wybierzGrupeZListy(listaGrup));
         listaStudentow.add(student);
         return student;

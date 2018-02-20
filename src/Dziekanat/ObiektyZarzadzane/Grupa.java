@@ -11,10 +11,6 @@ public class Grupa extends Obiekt implements MenadzerListyPrzedmiotow {
         this.nazwa = nazwa;
     }
 
-    public String getNazwa() {
-        return nazwa;
-    }
-
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
     }
