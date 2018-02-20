@@ -14,6 +14,10 @@ public class Nauczyciel extends Osoba implements MenadzerListyPrzedmiotow {
         super();
     }
 
+    public ArrayList<Przedmiot> getPrzedmioty() {
+        return przedmioty;
+    }
+
     public void dodajPrzedmiot(Przedmiot przedmiot) {
         this.przedmioty.add(przedmiot);
     }

@@ -16,7 +16,7 @@ public class GrupaMenadzer extends ObiektMenadzer implements Operacje {
     public Obiekt dodaj() throws IOException {
         String nazwa = wierszPolecen.wczytajTekst("Podaj nazwę "+kontekst);
         Grupa grupa = new Grupa(nazwa);
-        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(true);
+        PrzedmiotMenadzer przedmiotMenadzer = new PrzedmiotMenadzer(false);
         grupa.dodajPrzedmiot((Przedmiot) przedmiotMenadzer.dodaj());
         listaGrup.add(grupa);
         return grupa;
@@ -38,5 +38,16 @@ public class GrupaMenadzer extends ObiektMenadzer implements Operacje {
     @Override
     public void wyswietl() {
         super.wyswietlListeObiektow(listaGrup);
+    }
+
+    public Grupa wybierzGrupeZListy(ArrayList<Grupa> lista) throws IOException {
+        if (!wyswietlListeObiektow(lista)) {
+            System.out.println("Brak grup studenta");
+            return null;
+        }
+        int indexGrupy = wierszPolecen.wczytajLiczbeZZakresu("Wybierz index grupy",
+                0, lista.size()-1);
+        Grupa grupa = lista.get(indexGrupy);
+        return grupa;
     }
 }

@@ -19,7 +19,7 @@ public class Dziekanat {
             zaloguj();
         }
 
-        przykladoweOperacje();
+//        przykladoweOperacje();
 
         int idOperacji = 0;
         while (idOperacji != 5) {

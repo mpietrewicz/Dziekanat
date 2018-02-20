@@ -1,6 +1,7 @@
 package Dziekanat.Zarzadzanie;
 
 import Dziekanat.BazaDanych;
+import Dziekanat.ObiektyZarzadzane.Grupa;
 import Dziekanat.ObiektyZarzadzane.Obiekt;
 import Dziekanat.ObiektyZarzadzane.Ocena;
 import Dziekanat.ObiektyZarzadzane.Przedmiot;
@@ -55,5 +56,16 @@ public class PrzedmiotMenadzer extends ObiektMenadzer implements Operacje {
     @Override
     public void wyswietl() {
         super.wyswietlListeObiektow(listaPrzedmiotow);
+    }
+
+    public Przedmiot wybierzPrzedmiotZListy(ArrayList<Przedmiot> lista) throws IOException {
+        if (!wyswietlListeObiektow(lista)) {
+            System.out.println("Brak przedmiotów nauczyciela");
+            return null;
+        }
+        int indexPrzedmiotu = wierszPolecen.wczytajLiczbeZZakresu("Wybierz index przedmiotu",
+                0, lista.size()-1);
+        Przedmiot przedmiot = lista.get(indexPrzedmiotu);
+        return przedmiot;
     }
 }
